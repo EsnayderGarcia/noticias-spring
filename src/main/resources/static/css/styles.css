@@ -1,0 +1,62 @@
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.principal {
+    padding: 1em;
+    flex: 1;
+}
+
+.container {
+	flex:1;
+}
+
+.card-pai {
+	margin-bottom: 1.8rem;
+}
+
+.card {
+    border: #6DB33F solid 1px;
+    text-align: justify;
+}
+
+.btn {
+   text-align: center;
+}
+
+.card-footer {
+	background-color:  #6DB33F;
+
+}
+
+.card a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.card a {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	transition: 1s;
+}
+
+.card a :hover {
+	background-color: darkgreen;
+}
+
+.card-footer {
+	color: white;
+	font-size: 1.2rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.alert-success {
+	font-size: 1rem;
+	color: green;
+	font-weight: bold;
+}
+

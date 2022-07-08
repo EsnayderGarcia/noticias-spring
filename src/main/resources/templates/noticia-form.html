@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel= "stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<title>Cadastrar Notícia</title>
+</head>
+
+<body>
+	<header th:replace="~{fragmentos/header}"></header>
+
+	<main class="container">
+		<div class="alert alert-success alert-dismissible fade show mt-4" 
+			 role="alert"
+			 th:if="${msgSuccess}">
+	  		
+	  		<h5 th:text="${msgSuccess}"></h5>
+	  		
+	  		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+
+		<h1 th:if="${noticia.id == null }" class="mb-3">Cadastre uma Notícia</h1>
+		
+		<!--Esse h1 aparece caso a notícia esteja em edição-->
+		<h1 th:text="${mensagem}" class="mb-3"></h1>
+
+		<form action="/noticia/salvar" method="Post" th:object="${noticia}">
+			<input th:if="${noticia?.id}" type="hidden" name="id"
+				   th:value="${noticia?.id}" readonly> 
+				
+			<label for="categoria">Escolha uma Categoria</label> 
+				
+			<select class="form-select mb-3" id="categoria"
+				name = "categoria">
+				<option selected disabled value="">Selecione uma Categoria</option>
+				
+				<option th:each="c : ${categorias}" 
+					th:value="${c.id}"
+					th:text="${c.tipo}"
+					th:selected="${c.id} == ${noticia?.categoria?.id}"/>
+			</select>
+			
+			<div class="mb-3">
+				<label for="titulo" class="form-label">Título da Notícia</label>	
+
+				<input th:classappend="${#fields.hasErrors('titulo')} ? is-invalid"
+					   type="text" class="form-control"
+					   th:field="*{titulo}"
+					   placeholder="Informe o Título da Notícia">
+					
+				<div th:errors="*{titulo}" class="invalid-feedback"></div>
+			</div>
+
+			<div class="mb-3">
+				<label for="descricao" class="form-label">Descrição da Notícia</label>
+					
+				<textarea class="form-control"
+					th:classappend="${#fields.hasErrors('descricao')} ? is-invalid"
+					th:field="*{descricao}" rows="3">
+				</textarea>
+				
+				<div th:errors="*{descricao}" class="invalid-feedback"></div>
+			</div>
+
+			<input type="submit" class="btn btn-outline-success"
+				value="Salvar Notícia"> 
+				
+			<button class="btn btn-outline-danger"
+					type="button" 
+					th:if="${noticia.id != null}"
+					th:onclick="confirmarExclusao([(${noticia.id})])">Excluir</button>	
+		</form>
+	</main>
+	
+	<footer th:replace="~{fragmentos/footer}"></footer>
+	
+	<script>
+		function confirmarExclusao(id) {
+			if(confirm("Deseja realmente excluir está notícia?")) {
+				location.href="/noticia/deletar/"+id
+			}	
+		}
+	</script>
+	
+	<script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
