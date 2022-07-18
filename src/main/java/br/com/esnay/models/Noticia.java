@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -38,7 +39,7 @@ public class Noticia implements Serializable {
 	private String titulo;
 	
 	@NotBlank(message = "O campo descrição deve ser informado.")
-	@Size(min = 5, max = 255, message = "O campo descrição deve ter no mínimo {min} e no máximo {max} caracteres.")
+	@Lob
 	private String descricao;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
