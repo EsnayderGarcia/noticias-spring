@@ -39,7 +39,7 @@ public class Noticia implements Serializable {
 	private String titulo;
 	
 	@NotBlank(message = "O campo descrição deve ser informado.")
-	@Lob
+	@Size(min = 10, message = "O campo descrição deve ter no mínimo {min} caracteres!")
 	private String descricao;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
