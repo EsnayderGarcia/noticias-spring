@@ -1,6 +1,6 @@
 # Notícias-Spring
 
-O Notícias-Spring é um projeto pessoal que desenvolvi para por em prática os conhecimentos adiquiridos com os meus estudos da linguagem java, banco de dados
+O Notícias-Spring é um projeto pessoal que desenvolvi para por em prática os conhecimentos adquiridos com os meus estudos da linguagem java, banco de dados
 e do ecossistema spring. O sistema é um crud de notícias no qual você cadastra uma categoria e uma notícia vinculada a esta categoria. O sistema permite a criação, 
 edição, deleção e a consulta de notícias através de uma busca por título ou categoria.
 
