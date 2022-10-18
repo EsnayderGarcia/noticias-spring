@@ -19,17 +19,26 @@
 - Heroku Cloud
 
 ### Página principal
-<div align=center>   
+<div>   
   <img src="https://user-images.githubusercontent.com/108491940/196484142-aa6dd589-f726-47cf-a2d6-284b50f25ce9.png" width=800px/>
 </div>
 
 ### Página para cadastro de categoria
-<div align=center>   
+<div>   
   <img src="https://user-images.githubusercontent.com/108491940/196484710-774a1cea-bbc0-4066-81e5-df230308aec9.png" width=800px/>
 </div>
 
-## Link do projeto no Heroku
-https://noticias-spring.herokuapp.com/home
+### Página para cadastro de notícia
+<div>   
+  <img src="https://user-images.githubusercontent.com/108491940/196520172-783f8675-5410-4b47-8013-8591a2c307cd.png" width=800px/>
+</div>
 
-OBS: A plataforma Heroku coloca em hibernação as aplicações que estão algum tempo sem requisições. Então, caso  o projeto não abra de primeira,
-por favor, aguarde alguns segundos ou feche e abra o link novamente. Obrigado!
+### Página para edição de notícia
+<div>   
+  <img src="https://user-images.githubusercontent.com/108491940/196520419-0744464b-8edc-424c-aa50-9afc08169ba8.png" width=800px/>
+</div>
+
+## Acesse o projeto 
+<a href="https://noticias-spring.herokuapp.com/home">🚀 Notícias Spring</a>
+
+OBS: A plataforma Heroku coloca em hibernação as aplicações que estão algum tempo sem requisições. Então, caso  o projeto não abra de primeira, por favor, aguarde alguns segundos. Obrigado!
